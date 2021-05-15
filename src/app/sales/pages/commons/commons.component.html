@@ -1,0 +1,73 @@
+<div class="text-layout">
+    <h3>Basic Pipes</h3>
+    <p>Pipes included in Angular, usually in the CommonModule.</p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-4">
+        <p-card header="uppercase"
+            [subheader]="lowerName">
+            {{ lowerName | uppercase }}
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="lowercase"
+            [subheader]="upperName">
+            {{ upperName | lowercase }}
+        </p-card>
+    </div>
+    <div class="p-col-4">
+        <p-card header="titlecase"
+            [subheader]="fullName">
+            {{ fullName | titlecase }}
+        </p-card>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h3>Date Pipe</h3>
+    <p>Formats the date.</p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li>currentDate</li>
+                <li>currentDate | date</li>
+                <li>currentDate | date:'short'</li>
+                <li>currentDate | date:'long'</li>
+                <li>currentDate | date:'yyyy-MM-dd HH:mm:ss'</li>
+                <li>currentDate | date:'MMMM dd, yyyy'</li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li>currentDate | date:'long':'GMT-6':'es-CO'</li>
+                <li>currentDate | date:'long':'GMT-4':''</li>
+                <li>currentDate | date:'long':'':'fr'</li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="p-col-6">
+        <p-card>
+            <ul>
+                <li>{{ currentDate }}</li>
+                <li>{{ currentDate | date }}</li>
+                <li>{{ currentDate | date:'short' }}</li>
+                <li>{{ currentDate | date:'long' }}</li>
+                <li>{{ currentDate | date:'yyyy-MM-dd HH:mm:ss' }}</li>
+                <li>{{ currentDate | date:'MMMM dd, yyyy' }}</li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li>{{ currentDate | date:'long':'GMT-6':'es-CO' }}</li>
+                <li>{{ currentDate | date:'long':'GMT-4':'' }}</li>
+                <li>{{ currentDate | date:'long':'':'fr' }}</li>
+            </ul>
+        </p-card>
+    </div>
+</div>

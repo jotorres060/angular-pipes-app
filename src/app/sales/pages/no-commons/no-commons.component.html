@@ -1,0 +1,62 @@
+<div class="text-layout">
+    <h3>No Common Pipes</h3>
+    <p>Pipes included in Angular, usually in the CommonModule.</p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col p-md-6">
+        <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+            <p-radioButton label="Female" name="gender" value="Female" [(ngModel)]="gender" (onClick)="assignName()"></p-radioButton> &nbsp;
+            <p-radioButton label="Male" name="gender" value="Male" [(ngModel)]="gender" (onClick)="assignName()"></p-radioButton>
+            <br><br>
+
+            Hi <strong>{{ name }}</strong>!
+            You are the most smart <strong>{{ gender | i18nSelect:genderMapping }}</strong> in the world.
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+            There are currently {{ customers.length | i18nPlural:customerMapping }} waiting...
+
+            <br><br>
+            <button pButton type="button" class="p-button-help p-button-raised p-button-rounded" icon="pi pi-minus" (click)="removeCustomer()"></button> &nbsp;
+            <button pButton type="button" class=".p-button-danger   p-button-raised p-button-rounded" icon="pi pi-plus" (click)="addCustomer()"></button>
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+            <strong>Slice</strong>
+            <pre>{{ techs }}</pre>
+
+            <strong>slice:0:3</strong>
+            <pre>{{ techs | slice:0:3 }}</pre>
+
+            <strong>slice:3</strong>
+            <pre>{{ techs | slice:3 }}</pre>
+
+            <strong>slice:0:3</strong>
+            <pre>{{ name | slice:0:3 }}</pre>
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="Json Pipe" [toggleable]="true">
+            <pre>{{ heroes | json }}</pre>
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+            <ul>
+                <li *ngFor="let user of userInfo | keyvalue">
+                    <strong>{{ user.key }}:</strong>
+                    {{ user.value }}
+                </li>
+            </ul>
+        </p-fieldset>
+    </div>
+    <div class="p-col p-md-6">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <pre *ngIf="!(myObservable | async)">Resolving observable...</pre>
+            <pre>{{ myObservable | async }}</pre>
+        </p-fieldset>
+    </div>
+</div>
